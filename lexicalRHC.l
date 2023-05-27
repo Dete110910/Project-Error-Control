@@ -46,56 +46,56 @@ comment		\/\*[^(\n)]*\*\/
 
 %%
 
-{int}           {return VINT;}
-{decimal}       {return DEC;}
-{char}          {return VCHA;}
-{string}        {return STR;}
-{libToImport}   {return LTI;}
-"char*"		{return CHARAT;}
-"void"          {return VOI;}
-"if"            {return IFF;}
-"else"          {return ELS;}
-"long"          {return LON;}
-"switch"        {return SWI;}
-"break"         {return BRE;}
-"case"          {return CAS;}
-"return"        {return RET;}
-"short"        	{return SHO;}
-"const"         {return CON;}
-"for"           {return FOR;}
-"sizeof"        {return SIZ;}
-"default"       {return DEF;}
-"static"        {return STA;}
-"while"		{return WHI;}
-"do"            {return DOO;}
-"double"        {return DOU;}
-"int"           {return INT;}
-"char"          {return CHA;}
-"#include"      {return INC;}
-"scanf" 	{return SCA;}
-"printf" 	{return PRI;}
-"cout" 		{return COU;}
-"cin" 		{return CIN;}
-","		{return COM;}
+{int}           {HANDLE_COLUM; return VINT;}
+{decimal}       {HANDLE_COLUM; return DEC;}
+{char}          {HANDLE_COLUM; return VCHA;}
+{string}        {HANDLE_COLUM; return STR;}
+{libToImport}   {HANDLE_COLUM; return LTI;}
+"char*"		{HANDLE_COLUM; return CHARAT;}
+"void"          {HANDLE_COLUM; return VOI;}
+"if"            {HANDLE_COLUM; return IFF;}
+"else"          {HANDLE_COLUM; return ELS;}
+"long"          {HANDLE_COLUM; return LON;}
+"switch"        {HANDLE_COLUM; return SWI;}
+"break"         {HANDLE_COLUM; return BRE;}
+"case"          {HANDLE_COLUM; return CAS;}
+"return"        {HANDLE_COLUM; return RET;}
+"short"        	{HANDLE_COLUM; return SHO;}
+"const"         {HANDLE_COLUM; return CON;}
+"for"           {HANDLE_COLUM; return FOR;}
+"sizeof"        {HANDLE_COLUM; return SIZ;}
+"default"       {HANDLE_COLUM; return DEF;}
+"static"        {HANDLE_COLUM; return STA;}
+"while"		{HANDLE_COLUM; return WHI;}
+"do"            {HANDLE_COLUM; return DOO;}
+"double"        {HANDLE_COLUM; return DOU;}
+"int"           {HANDLE_COLUM; return INT;}
+"char"          {HANDLE_COLUM; return CHA;}
+"#include"      {HANDLE_COLUM; return INC;}
+"scanf" 	{HANDLE_COLUM; return SCA;}
+"printf" 	{HANDLE_COLUM; return PRI;}
+"cout" 		{HANDLE_COLUM; return COU;}
+"cin" 		{HANDLE_COLUM; return CIN;}
+","		{HANDLE_COLUM; return COM;}
 =		{HANDLE_COLUM; return ASS;}
-\+		{return PLS;}
-\*		{return AST;}
-\-		{return MIN;}
-\/		{return SLS;}
-"<"             {return MTQ;}
-"<="            {return MET;}
-">"             {return GTQ;}
-">="            {return GEQ;}
-"=="            {return EQL;}
-"!="            {return NQL;}
-"("             {return OPP;}
-")"		{return CPP;}
-"{" 		{return OCB;}
-"}" 		{return CCB;}
-"[" 		{return OBK;}
-"]" 		{return CBK;}
+\+		{HANDLE_COLUM; return PLS;}
+\*		{HANDLE_COLUM; return AST;}
+\-		{HANDLE_COLUM; return MIN;}
+\/		{HANDLE_COLUM; return SLS;}
+"<"             {HANDLE_COLUM; return MTQ;}
+"<="            {HANDLE_COLUM; return MET;}
+">"             {HANDLE_COLUM; return GTQ;}
+">="            {HANDLE_COLUM; return GEQ;}
+"=="            {HANDLE_COLUM; return EQL;}
+"!="            {HANDLE_COLUM; return NQL;}
+"("             {HANDLE_COLUM; return OPP;}
+")"		{HANDLE_COLUM; return CPP;}
+"{" 		{HANDLE_COLUM; return OCB;}
+"}" 		{HANDLE_COLUM; return CCB;}
+"[" 		{HANDLE_COLUM; return OBK;}
+"]" 		{HANDLE_COLUM; return CBK;}
 ";"		{HANDLE_COLUM; return SMC;}
-{comment}	{return CMM;}
+{comment}	{HANDLE_COLUM; return CMM;}
 {identifier}	{HANDLE_COLUM; return IDE;}
 [ \t]+		{HANDLE_COLUM;}	
 [\n]		{HANDLE_COLUM; next_colum=1; return '\n';}
