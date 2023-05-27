@@ -5,7 +5,9 @@ extern int yylex(void);
 extern FILE *yyin;
 extern int yylineno;
 extern char* yytext;
-void yyerror(char *s);
+void yyerror(const char *s);
+extern int colum;
+extern char *lineptr;
 //extern YYSTYPE yylval;
 //#define YYERROR_VERBOSE 1
 %}
@@ -93,17 +95,26 @@ asigvar 	: IDE ASS VINT SMC
 
 %%
 
-void yyerror(char *s) {
+void yyerror(const char *s) {
     printf("Error sintáctico en la línea %d: %s  yytext %s\n", yylineno, s, yytext);
+
+    fprintf(stderr,"error: %s in line %d, column %d\n", s, yylineno, colum);
+    fprintf(stderr,"%s", lineptr);
+    for(int i = 0; i < colum - 1; i++)
+        fprintf(stderr,"_");
+    fprintf(stderr,"^\n");
+	
 }
 
 int main(int argc, char **argv){
+
         if(argc > 1)
                 yyin=fopen(argv[1], "rt");
         else
                 yyin=stdin;
 
         yyparse();
+	free(lineptr);
         return 0;
 }
 

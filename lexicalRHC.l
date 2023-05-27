@@ -1,5 +1,5 @@
 %{
-#include "sintactic.tab.h"
+#include "sintacticRHC.tab.h"
 extern char* yytext;
 extern FILE *yyin;
 
@@ -8,7 +8,32 @@ int colum = 1;
 
 #define HANDLE_COLUM colum = next_colum; next_colum += strlen(yytext)
 
+
+char *lineptr = NULL;
+size_t n = 0;
+size_t consumed = 0;
+size_t available = 0;
+
+size_t min(size_t a, size_t b);
+    #define YY_INPUT(buf,result,max_size) {\
+        if(available <= 0) {\
+            consumed = 0;\
+            available = getline(&lineptr, &n, yyin);\
+            if (available < 0) {\
+                if (ferror(yyin)) { perror("read error:"); }\
+                    available = 0;\
+                }\
+        }\
+        result = min(available, max_size);\
+        strncpy(buf, lineptr + consumed, result);\
+        consumed += result;\
+        available -= result;\
+    }
+
 %}
+
+%option noyywrap noinput nounput yylineno
+
 
 int		-?[0-9]+
 decimal		-?[0-9](\.[0-9])+
@@ -18,7 +43,6 @@ identifier 	[a-zA-Z0-9]+
 libToImport	\<([a-zA-Z0-9_-]+\.h)\>
 comment		\/\*[^(\n)]*\*\/
 
-%option yylineno
 
 %%
 
@@ -53,7 +77,7 @@ comment		\/\*[^(\n)]*\*\/
 "cout" 		{return COU;}
 "cin" 		{return CIN;}
 ","		{return COM;}
-=		{return ASS;}
+=		{HANDLE_COLUM; return ASS;}
 \+		{return PLS;}
 \*		{return AST;}
 \-		{return MIN;}
@@ -70,14 +94,18 @@ comment		\/\*[^(\n)]*\*\/
 "}" 		{return CCB;}
 "[" 		{return OBK;}
 "]" 		{return CBK;}
-";"		{return SMC;}
+";"		{HANDLE_COLUM; return SMC;}
 {comment}	{return CMM;}
-{identifier}	{return IDE;}
-[ \t]		{}	
-[\n]		{yyset_lineno(yylineno);}
+{identifier}	{HANDLE_COLUM; return IDE;}
+[ \t]+		{HANDLE_COLUM;}	
+[\n]		{HANDLE_COLUM; next_colum=1; return '\n';}
 .		{printf("lexical error\n");}
 
 %% 
 
-int yywrap(){return 1;}
+//int yywrap(){return 1;}
+
+size_t min(size_t a, size_t b) {
+    return b < a ? b : a;
+}
 
