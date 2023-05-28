@@ -115,7 +115,7 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 16 "sintacticRHC.y"
+#line 17 "sintacticRHC.y"
 
  char *idval;
 

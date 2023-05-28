@@ -26,8 +26,8 @@ extern char *lineptr;
 %%
 
 sentencias 	:
+	        | YYEOF {printf("Fin del archivo\n");}
 		| sentencias sentencia {printf("Sentencia con sentencias\n");}
-		| sentencias error SMC {}
 
 
 sentencia 	: decvar {printf("sentencia if\n");}
@@ -96,36 +96,62 @@ asigvar 	: IDE ASS VINT SMC
 
 %%
 
-void getElements(char *string, char* elementList, int* counter){
+void getElements(char string[], char* elementList[], int* counter){
 	char* delimiter = " ";
 	char* token = strtok(string, delimiter);
-	if(token != NULL){
-		while(token != NULL){
-			elementList[*counter] = token;
-			(*counter)++;
-			token = strtok(NULL, delimiter);
-		}
+	while(token != NULL && *counter < 15){
+		elementList[*counter] = token;
+		(*counter)++;
+		token = strtok(NULL, delimiter);
 	}
 	
+}
+
+void structureIf(char* ifSentence[]){
+	if (strcmp(ifSentence[1], "(")!=0) {
+		printf ("La cadena %s no pertenece a la estructura del if\n", ifSentence[1]);
+		printf ("Hace falta el paréntesis de apertura para identificar donde empieza la condición.\n");
+	} else if (strcmp (ifSentence[5], ")")!=0) {
+		printf ("La cadena %s no pertenece a la estructura del if\n", ifSentence[5]);
+		printf ("Hace falta el paréntesis de cierre para identificar donde finaliza la condición.\n");
+	} else if (strcmp (ifSentence[6], "{")!=0) {
+                printf ("La cadena %s no pertenece a la estructura del if\n", ifSentence[6]);
+                printf ("Hace falta el corcherte de apertura para identificar las sentencias. \n");
+        } else {
+
+	}
+	printf("La estructura del if es:if ( condición ) {\n}\n");
+
+}
+
+
+void identifyStructure(char* elementList[]) {
+	if (strcmp(elementList[0], "if")==0) {
+		structureIf(elementList);
+	}
 }
 
 
 
 void yyerror(const char *s) {
+	char s2[sizeof(lineptr)];
+	strcpy(s2, lineptr); 
 	char* elementList[15];
 	int counter = 0;
-	getElements(s, elementList, &counter);
-    printf("Error sintáctico en la línea %d: no se esperaba: %s\n", yylineno, yytext);
+	getElements(s2, elementList, &counter);
+	printf("Error sintáctico en la línea %d columna %d: no se esperaba: %s\n", yylineno,colum, yytext); 
+	//fprintf(stderr,"error: %s in line %d, column %d\n", s, yylineno, colum);
+	fprintf(stderr,"%s", lineptr);
+	for(int i = 0; i < colum - 1; i++)
+        	fprintf(stderr,"_");
+	fprintf(stderr,"^\n");
 
-    
-    
-    fprintf(stderr,"error: %s in line %d, column %d\n", s, yylineno, colum);
-    fprintf(stderr,"%s", lineptr);
-    for(int i = 0; i < colum - 1; i++)
-        fprintf(stderr,"_");
-    fprintf(stderr,"^\n");
 	
+        identifyStructure(elementList);
+	getch();
 }
+
+
 
 
 

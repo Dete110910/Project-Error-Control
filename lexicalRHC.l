@@ -98,7 +98,7 @@ comment		\/\*[^(\n)]*\*\/
 {comment}	{HANDLE_COLUM; return CMM;}
 {identifier}	{HANDLE_COLUM; return IDE;}
 [ \t]+		{HANDLE_COLUM;}	
-[\n]		{HANDLE_COLUM; next_colum=1; return '\n';}
+[\n]		{HANDLE_COLUM; next_colum=1;}
 .		{printf("lexical error\n");}
 
 %% 
