@@ -1,6 +1,7 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 extern int yylex(void);
 extern FILE *yyin;
 extern int yylineno;
@@ -95,9 +96,29 @@ asigvar 	: IDE ASS VINT SMC
 
 %%
 
-void yyerror(const char *s) {
-    printf("Error sintáctico en la línea %d: %s  yytext %s\n", yylineno, s, yytext);
+void getElements(char *string, char* elementList, int* counter){
+	char* delimiter = " ";
+	char* token = strtok(string, delimiter);
+	if(token != NULL){
+		while(token != NULL){
+			elementList[*counter] = token;
+			(*counter)++;
+			token = strtok(NULL, delimiter);
+		}
+	}
+	
+}
 
+
+
+void yyerror(const char *s) {
+	char* elementList[15];
+	int counter = 0;
+	getElements(s, elementList, &counter);
+    printf("Error sintáctico en la línea %d: no se esperaba: %s\n", yylineno, yytext);
+
+    
+    
     fprintf(stderr,"error: %s in line %d, column %d\n", s, yylineno, colum);
     fprintf(stderr,"%s", lineptr);
     for(int i = 0; i < colum - 1; i++)
@@ -105,6 +126,8 @@ void yyerror(const char *s) {
     fprintf(stderr,"^\n");
 	
 }
+
+
 
 int main(int argc, char **argv){
 

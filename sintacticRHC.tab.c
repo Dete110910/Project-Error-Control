@@ -71,6 +71,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 extern int yylex(void);
 extern FILE *yyin;
 extern int yylineno;
@@ -81,7 +82,7 @@ extern char *lineptr;
 //extern YYSTYPE yylval;
 //#define YYERROR_VERBOSE 1
 
-#line 85 "sintacticRHC.tab.c"
+#line 86 "sintacticRHC.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -564,12 +565,12 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    27,    27,    28,    29,    32,    33,    34,    35,    36,
-      38,    42,    43,    44,    45,    46,    47,    48,    51,    52,
-      53,    54,    55,    56,    57,    60,    61,    62,    63,    64,
-      65,    66,    67,    68,    69,    70,    71,    72,    73,    74,
-      75,    76,    77,    78,    79,    80,    81,    82,    83,    84,
-      85,    86,    87,    90,    91,    92,    93
+       0,    28,    28,    29,    30,    33,    34,    35,    36,    37,
+      39,    43,    44,    45,    46,    47,    48,    49,    52,    53,
+      54,    55,    56,    57,    58,    61,    62,    63,    64,    65,
+      66,    67,    68,    69,    70,    71,    72,    73,    74,    75,
+      76,    77,    78,    79,    80,    81,    82,    83,    84,    85,
+      86,    87,    88,    91,    92,    93,    94
 };
 #endif
 
@@ -1482,97 +1483,97 @@ yyreduce:
   switch (yyn)
     {
   case 3: /* sentencias: sentencias sentencia  */
-#line 28 "sintacticRHC.y"
+#line 29 "sintacticRHC.y"
                                        {printf("Sentencia con sentencias\n");}
-#line 1488 "sintacticRHC.tab.c"
+#line 1489 "sintacticRHC.tab.c"
     break;
 
   case 4: /* sentencias: sentencias error SMC  */
-#line 29 "sintacticRHC.y"
+#line 30 "sintacticRHC.y"
                                        {}
-#line 1494 "sintacticRHC.tab.c"
+#line 1495 "sintacticRHC.tab.c"
     break;
 
   case 5: /* sentencia: decvar  */
-#line 32 "sintacticRHC.y"
+#line 33 "sintacticRHC.y"
                          {printf("sentencia if\n");}
-#line 1500 "sintacticRHC.tab.c"
+#line 1501 "sintacticRHC.tab.c"
     break;
 
   case 6: /* sentencia: cond  */
-#line 33 "sintacticRHC.y"
+#line 34 "sintacticRHC.y"
                        {printf("decvar sentencia\n");}
-#line 1506 "sintacticRHC.tab.c"
+#line 1507 "sintacticRHC.tab.c"
     break;
 
   case 7: /* sentencia: initvar  */
-#line 34 "sintacticRHC.y"
+#line 35 "sintacticRHC.y"
                           {printf("initvar sentencia\n");}
-#line 1512 "sintacticRHC.tab.c"
+#line 1513 "sintacticRHC.tab.c"
     break;
 
   case 8: /* sentencia: asigvar  */
-#line 35 "sintacticRHC.y"
+#line 36 "sintacticRHC.y"
                           {printf("asigvar sentencia\n");}
-#line 1518 "sintacticRHC.tab.c"
+#line 1519 "sintacticRHC.tab.c"
     break;
 
   case 9: /* sentencia: ifsim  */
-#line 36 "sintacticRHC.y"
+#line 37 "sintacticRHC.y"
                         {printf("cond sentencia\n");}
-#line 1524 "sintacticRHC.tab.c"
+#line 1525 "sintacticRHC.tab.c"
     break;
 
   case 10: /* ifsim: IFF OPP cond CPP OCB CCB  */
-#line 38 "sintacticRHC.y"
+#line 39 "sintacticRHC.y"
                                             {printf("ifsim\n");}
-#line 1530 "sintacticRHC.tab.c"
+#line 1531 "sintacticRHC.tab.c"
     break;
 
   case 11: /* cond: IDE ASS IDE  */
-#line 42 "sintacticRHC.y"
+#line 43 "sintacticRHC.y"
                               {printf("asig");}
-#line 1536 "sintacticRHC.tab.c"
+#line 1537 "sintacticRHC.tab.c"
     break;
 
   case 12: /* cond: IDE MTQ IDE  */
-#line 43 "sintacticRHC.y"
+#line 44 "sintacticRHC.y"
                               {printf("mayor");}
-#line 1542 "sintacticRHC.tab.c"
+#line 1543 "sintacticRHC.tab.c"
     break;
 
   case 13: /* cond: IDE MET IDE  */
-#line 44 "sintacticRHC.y"
+#line 45 "sintacticRHC.y"
                               {printf("mayor o igual");}
-#line 1548 "sintacticRHC.tab.c"
+#line 1549 "sintacticRHC.tab.c"
     break;
 
   case 14: /* cond: IDE GTQ IDE  */
-#line 45 "sintacticRHC.y"
+#line 46 "sintacticRHC.y"
                               {printf("menor");}
-#line 1554 "sintacticRHC.tab.c"
+#line 1555 "sintacticRHC.tab.c"
     break;
 
   case 15: /* cond: IDE GEQ IDE  */
-#line 46 "sintacticRHC.y"
+#line 47 "sintacticRHC.y"
                               {printf("menor o igual");}
-#line 1560 "sintacticRHC.tab.c"
+#line 1561 "sintacticRHC.tab.c"
     break;
 
   case 16: /* cond: IDE EQL IDE  */
-#line 47 "sintacticRHC.y"
+#line 48 "sintacticRHC.y"
                               {printf("igual");}
-#line 1566 "sintacticRHC.tab.c"
+#line 1567 "sintacticRHC.tab.c"
     break;
 
   case 17: /* cond: IDE NQL IDE  */
-#line 48 "sintacticRHC.y"
+#line 49 "sintacticRHC.y"
                               {printf("diferente");}
-#line 1572 "sintacticRHC.tab.c"
+#line 1573 "sintacticRHC.tab.c"
     break;
 
 
-#line 1576 "sintacticRHC.tab.c"
+#line 1577 "sintacticRHC.tab.c"
 
       default: break;
     }
@@ -1796,11 +1797,11 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 96 "sintacticRHC.y"
+#line 97 "sintacticRHC.y"
 
 
 void yyerror(const char *s) {
-    printf("Error sintáctico en la línea %d: %s  yytext %s\n", yylineno, s, yytext);
+    printf("Error sintáctico en la línea %d: no se esperaba: %s\n", yylineno, yytext);
 
     fprintf(stderr,"error: %s in line %d, column %d\n", s, yylineno, colum);
     fprintf(stderr,"%s", lineptr);
