@@ -40,7 +40,7 @@ decimal		-?[0-9](\.[0-9])+
 char		\'[^(\n|\')]{1}\'
 string		\"[^(\n|\")]*\"
 identifier 	[a-zA-Z0-9]+
-libToImport	\<([a-zA-Z0-9_-]+\.h)\>
+libToIimport	\<([a-zA-Z0-9_-]+\.h)\>
 comment		\/\*[^(\n)]*\*\/
 
 

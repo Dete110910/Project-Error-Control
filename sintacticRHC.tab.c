@@ -72,7 +72,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <conio.h>
+#include <ctype.h>
+#include <stdbool.h>
 extern int yylex(void);
 extern FILE *yyin;
 extern int yylineno;
@@ -83,7 +84,7 @@ extern char *lineptr;
 //extern YYSTYPE yylval;
 //#define YYERROR_VERBOSE 1
 
-#line 87 "sintacticRHC.tab.c"
+#line 88 "sintacticRHC.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -566,12 +567,12 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    29,    29,    30,    31,    34,    35,    36,    37,    38,
-      40,    44,    45,    46,    47,    48,    49,    50,    53,    54,
-      55,    56,    57,    58,    59,    62,    63,    64,    65,    66,
-      67,    68,    69,    70,    71,    72,    73,    74,    75,    76,
-      77,    78,    79,    80,    81,    82,    83,    84,    85,    86,
-      87,    88,    89,    92,    93,    94,    95
+       0,    30,    30,    31,    32,    35,    36,    37,    38,    39,
+      41,    45,    46,    47,    48,    49,    50,    51,    54,    55,
+      56,    57,    58,    59,    60,    63,    64,    65,    66,    67,
+      68,    69,    70,    71,    72,    73,    74,    75,    76,    77,
+      78,    79,    80,    81,    82,    83,    84,    85,    86,    87,
+      88,    89,    90,    94,    95,    96,    97
 };
 #endif
 
@@ -1486,97 +1487,97 @@ yyreduce:
   switch (yyn)
     {
   case 3: /* sentencias: $end  */
-#line 30 "sintacticRHC.y"
+#line 31 "sintacticRHC.y"
                         {printf("Fin del archivo\n");}
-#line 1492 "sintacticRHC.tab.c"
+#line 1493 "sintacticRHC.tab.c"
     break;
 
   case 4: /* sentencias: sentencias sentencia  */
-#line 31 "sintacticRHC.y"
+#line 32 "sintacticRHC.y"
                                        {printf("Sentencia con sentencias\n");}
-#line 1498 "sintacticRHC.tab.c"
+#line 1499 "sintacticRHC.tab.c"
     break;
 
   case 5: /* sentencia: decvar  */
-#line 34 "sintacticRHC.y"
+#line 35 "sintacticRHC.y"
                          {printf("sentencia if\n");}
-#line 1504 "sintacticRHC.tab.c"
+#line 1505 "sintacticRHC.tab.c"
     break;
 
   case 6: /* sentencia: cond  */
-#line 35 "sintacticRHC.y"
+#line 36 "sintacticRHC.y"
                        {printf("decvar sentencia\n");}
-#line 1510 "sintacticRHC.tab.c"
+#line 1511 "sintacticRHC.tab.c"
     break;
 
   case 7: /* sentencia: initvar  */
-#line 36 "sintacticRHC.y"
+#line 37 "sintacticRHC.y"
                           {printf("initvar sentencia\n");}
-#line 1516 "sintacticRHC.tab.c"
+#line 1517 "sintacticRHC.tab.c"
     break;
 
   case 8: /* sentencia: asigvar  */
-#line 37 "sintacticRHC.y"
+#line 38 "sintacticRHC.y"
                           {printf("asigvar sentencia\n");}
-#line 1522 "sintacticRHC.tab.c"
+#line 1523 "sintacticRHC.tab.c"
     break;
 
   case 9: /* sentencia: ifsim  */
-#line 38 "sintacticRHC.y"
+#line 39 "sintacticRHC.y"
                         {printf("cond sentencia\n");}
-#line 1528 "sintacticRHC.tab.c"
+#line 1529 "sintacticRHC.tab.c"
     break;
 
   case 10: /* ifsim: IFF OPP cond CPP OCB CCB  */
-#line 40 "sintacticRHC.y"
+#line 41 "sintacticRHC.y"
                                             {printf("ifsim\n");}
-#line 1534 "sintacticRHC.tab.c"
+#line 1535 "sintacticRHC.tab.c"
     break;
 
   case 11: /* cond: IDE ASS IDE  */
-#line 44 "sintacticRHC.y"
+#line 45 "sintacticRHC.y"
                               {printf("asig");}
-#line 1540 "sintacticRHC.tab.c"
+#line 1541 "sintacticRHC.tab.c"
     break;
 
   case 12: /* cond: IDE MTQ IDE  */
-#line 45 "sintacticRHC.y"
+#line 46 "sintacticRHC.y"
                               {printf("mayor");}
-#line 1546 "sintacticRHC.tab.c"
+#line 1547 "sintacticRHC.tab.c"
     break;
 
   case 13: /* cond: IDE MET IDE  */
-#line 46 "sintacticRHC.y"
+#line 47 "sintacticRHC.y"
                               {printf("mayor o igual");}
-#line 1552 "sintacticRHC.tab.c"
+#line 1553 "sintacticRHC.tab.c"
     break;
 
   case 14: /* cond: IDE GTQ IDE  */
-#line 47 "sintacticRHC.y"
+#line 48 "sintacticRHC.y"
                               {printf("menor");}
-#line 1558 "sintacticRHC.tab.c"
+#line 1559 "sintacticRHC.tab.c"
     break;
 
   case 15: /* cond: IDE GEQ IDE  */
-#line 48 "sintacticRHC.y"
+#line 49 "sintacticRHC.y"
                               {printf("menor o igual");}
-#line 1564 "sintacticRHC.tab.c"
+#line 1565 "sintacticRHC.tab.c"
     break;
 
   case 16: /* cond: IDE EQL IDE  */
-#line 49 "sintacticRHC.y"
+#line 50 "sintacticRHC.y"
                               {printf("igual");}
-#line 1570 "sintacticRHC.tab.c"
+#line 1571 "sintacticRHC.tab.c"
     break;
 
   case 17: /* cond: IDE NQL IDE  */
-#line 50 "sintacticRHC.y"
+#line 51 "sintacticRHC.y"
                               {printf("diferente");}
-#line 1576 "sintacticRHC.tab.c"
+#line 1577 "sintacticRHC.tab.c"
     break;
 
 
-#line 1580 "sintacticRHC.tab.c"
+#line 1581 "sintacticRHC.tab.c"
 
       default: break;
     }
@@ -1800,8 +1801,49 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 98 "sintacticRHC.y"
+#line 100 "sintacticRHC.y"
 
+
+bool isNumber(const char* string) {
+	int length = strlen(string);
+    	for (int i = 0; i < length; i++) {
+        	if (!isdigit(string[i])) {
+            		return false;
+        	}
+	    }
+    	return true;
+}
+
+bool isCharacter(const char* string) {
+	int length = strlen(string);
+    	if (length == 3 && string[0] == '\'' && string[2] == '\'') {
+        	return true;
+    	}
+    	return false;
+}
+
+bool isString(const char* string) {
+	int length = strlen(string);
+   	 if (length >= 2 && string[0] == '"' && string[length - 1] == '"') {
+        	return true;
+    	}
+    	return false;
+}
+
+bool isDecimal(const char* string) {
+	int length = strlen(string);
+  	bool puntoEncontrado = false;
+    	for (int i = 0; i < length; i++) {
+       		if (!isdigit(string[i])) {
+           		if (string[i] == '.' && !puntoEncontrado) {
+                		puntoEncontrado = true;
+            		} else {
+                		return false;
+            		}
+        	}
+    	}
+    	return puntoEncontrado;
+}
 
 void getElements(char string[], char* elementList[], int* counter){
 	char* delimiter = " ";
@@ -1811,35 +1853,76 @@ void getElements(char string[], char* elementList[], int* counter){
 		(*counter)++;
 		token = strtok(NULL, delimiter);
 	}
+
+	if (*counter ==15 && token != NULL) {
+		printf("Error: Se superó el número de elementos en una línea\n");
+	}
 	
+}
+
+int validarExpresion(const char *cadena) {
+    int i = 0;
+    char c;
+
+    while ((c = cadena[i]) != '\0') {
+        if (!isalnum(c)) {
+            return 0;  
+        }
+        i++;
+    }
+
+    return 1;  
 }
 
 void structureIf(char* ifSentence[]){
 	if (strcmp(ifSentence[1], "(")!=0) {
 		printf ("La cadena %s no pertenece a la estructura del if\n", ifSentence[1]);
-		printf ("La estructura del if es:   if ( condición ) {\n}\n");
+		printf ("Hace falta el paréntesis de apertura para identificar donde empieza la condición.\n");
 	} else if (strcmp (ifSentence[5], ")")!=0) {
 		printf ("La cadena %s no pertenece a la estructura del if\n", ifSentence[5]);
-		printf ("La estructura del if es:   if ( condición ) {\n}\n");
+		printf ("Hace falta el paréntesis de cierre para identificar donde finaliza la condición.\n");
 	} else if (strcmp (ifSentence[6], "{")!=0) {
                 printf ("La cadena %s no pertenece a la estructura del if\n", ifSentence[6]);
-                printf ("La estructura del if es:   if ( condición ) {\n}\n");
-        } else if (strcmp (ifSentence[7], "}")!=0) {
-                printf ("La cadena %s no pertenece a la estructura del if\n", ifSentence[7]);
-                printf ("La estructura del if es:   if ( condición ) {\n}\n");
-        } else if (strcmp (ifSentence[8], ";")!=0) {
-                printf ("La cadena %s no pertenece a la estructura del if\n", ifSentence[8]);
-                printf ("Hace falta el ; al final de la línea");
-        }
+                printf ("Hace falta el corcherte de apertura para identificar las sentencias. \n");
+      	}
+	printf("La estructura del if es:if ( condición ) {\n}\n");
 
+}
+
+void structureAss(char* assSentence[]){
+        if (strcmp(assSentence[1], "=")!=0) {
+                printf ("La cadena %s no pertenece a la estructura de asignación o no se encuentra en el orden correcto.\n", assSentence[1]);
+                printf ("Hace falta el símbolo '=' que hace referencia a lo que se va asignar.\n");
+        } else if (!isNumber(assSentence[2]) || !isCharacter(assSentence[2]) || !isString(assSentence[2]) || !isDecimal(assSentence[2])){
+                printf ("La cadena %s no pertenece a la estructura de asignación o no se encuentra en el orden correcto.\n", assSentence[2]);
+                printf ("No se está escribiendo correctamente el parámetro a asignar.\n");
+        } else if (strcmp (assSentence[3], ";")!=0) {
+                printf ("La cadena %s no pertenece a la estructura de asignación o no se encuentra en el orden correcto.\n", assSentence[3]);
+                printf ("Hace falta el punto y coma ';'.\n");
+	}
+}
+
+void structureDecVar(char* decSentence[]){
+        if (!validarExpresion(decSentence[1])) {
+                printf ("La cadena %s no pertenece a la estructura de declaración de variable o no se encuentra en el orden correcto.\n", decSentence[1]);
+                printf ("No se está escribiendo correctamente el identificador de la variable.\n");
+        } else if (strcmp (decSentence[3], ";")!=0) {
+                printf ("La cadena %s no pertenece a la estructura de asignación o no se encuentra en el orden correcto.\n", decSentence[3]);
+                printf ("Hace falta el punto y coma ';'.\n");
+        }
 }
 
 
 void identifyStructure(char* elementList[]) {
 	if (strcmp(elementList[0], "if")==0) {
 		structureIf(elementList);
+	} else if ((strcmp(elementList[0], "int")==0) || (strcmp(elementList[0], "char")==0) || (strcmp(elementList[0], "double")==0) || (strcmp(elementList[0], "long")==0) || (strcmp(elementList[0], "short")==0)){
+		structureDecVar(elementList);
+	}  else if (validarExpresion(elementList[0])) {   //Tiene que ir en los últimos
+		structureAss(elementList);
+	
 	}
-}
+}		
 
 
 
@@ -1849,18 +1932,17 @@ void yyerror(const char *s) {
 	char* elementList[15];
 	int counter = 0;
 	getElements(s2, elementList, &counter);
-	textcolor(RED);
 	printf("Error sintáctico en la línea %d columna %d: no se esperaba: %s\n", yylineno,colum, yytext); 
-    	textcolor(BLACK);
-	//fprintf(stderr,"error: %s in line %d, column %d\n", s, yylineno, colum);
+	fprintf(stderr,"error: %s in line %d, column %d\n", s, yylineno, colum);
 	fprintf(stderr,"%s", lineptr);
 	for(int i = 0; i < colum - 1; i++)
         	fprintf(stderr,"_");
 	fprintf(stderr,"^\n");
-
 	
+	/*for (int i = 0; i < counter; i++) {
+       	 printf("%s ", elementList[i]);
+    	}*/
         identifyStructure(elementList);
-	getch();
 }
 
 
