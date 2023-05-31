@@ -204,6 +204,15 @@ void structureIf(char* ifSentence[]){
 	if (strcmp(ifSentence[1], "(")!=0) {
 		printf ("La cadena %s no pertenece a la estructura del if", ifSentence[1]);
 		printf ("\nHace falta el paréntesis de apertura para identificar donde empieza la condición.\n");
+	} else if(!validarExpresion(ifSentence[2])){
+                printf("No se está escribiendo correctamente el identificador de la variable, o no es del mismo tipo.\n");
+                printf("Recuerde que los identificadores de variables pueden contener únicamente letras mayúsculas, minúsculas o números\n");
+        } else if((strcmp(ifSentence[3], "<") != 0) && (strcmp(ifSentence[3], ">") != 0) && (strcmp(ifSentence[3], "<=") != 0) && (strcmp(ifSentence[3], ">=") != 0) && (strcmp(ifSentence[3], "==")!=0) && (strcmp(ifSentence[3], "!=")!=0) ){
+                printf("Hace falta un operador que indica la condición.\n");
+                printf("Recuerda que los operadores más utilizados para las condiciones son '<','>','<=','>=','==','!='.\n");
+        } else if(!validarExpresion(ifSentence[4])){
+                printf("No se está escribiendo correctamente el identificador de la variable, o no es del mismo tipo.\n");
+                printf("Recuerde que los identificadores de variables pueden contener únicamente letras mayúsculas, minúsculas o números\n");
 	} else if (strcmp (ifSentence[5], ")")!=0) {
 		printf ("La cadena %s no pertenece a la estructura del if", ifSentence[5]);
 		printf ("\nHace falta el paréntesis de cierre para identificar donde finaliza la condición.\n");
@@ -218,14 +227,23 @@ void structureWhile(char* whileSentence[]){
         if (strcmp(whileSentence[1], "(")!=0) {
                 printf ("La cadena %s no pertenece a la estructura del while", whileSentence[1]);
                 printf ("\nHace falta el paréntesis de apertura para identificar donde empieza la condición.\n");
-        } else if (strcmp (whileSentence[5], ")")!=0) {
+        } else if (!validarExpresion(whileSentence[2])) {
+                printf("No se está escribiendo correctamente el identificador de la variable, o no es del mismo tipo.\n");
+                printf("Recuerde que los identificadores de variables pueden contener únicamente letras mayúsculas, minúsculas o números\n");
+        } else if((strcmp(whileSentence[3], "<") != 0) && (strcmp(whileSentence[3], ">") != 0) && (strcmp(whileSentence[3], "<=") != 0) && (strcmp(whileSentence[3], ">=") != 0) && (strcmp(whileSentence[3], "==")!=0) && (strcmp(whileSentence[3], "!=")!=0) ){
+                printf("Hace falta un operador que indica la condición.\n");
+                printf("Recuerda que los operadores más utilizados para las condiciones son '<','>','<=','>=','==','!='.\n");
+        } else if (!validarExpresion(whileSentence[4])){
+                printf("No se está escribiendo correctamente el identificador de la variable, o no es del mismo tipo.\n");
+                printf("Recuerde que los identificadores de variables pueden contener únicamente letras mayúsculas, minúsculas o números\n");
+	} else if (strcmp (whileSentence[5], ")")!=0) {
                 printf ("La cadena %s no pertenece a la estructura del while", whileSentence[5]);
                 printf ("\nHace falta el paréntesis de cierre para identificar donde finaliza la condición.\n");
         } else if (strcmp (whileSentence[6], "{")!=0) {
                 printf ("La cadena %s no pertenece a la estructura del while", whileSentence[6]);
                 printf ("\nHace falta el corcherte de apertura para identificar las sentencias. \n");
         }
-        printf("La estructura del while es: while ( condición ) {\n}\n");
+        printf("Recuerde que la condición debe tener el mismo tipo de dato. La estructura del while es: while ( condición ) {\n}\n");
 }
 
 
@@ -233,7 +251,17 @@ void structureIfElse(char* ifSentence[]){
         if (strcmp(ifSentence[1], "(")!=0) {
                 printf ("La cadena %s no pertenece a la estructura del if", ifSentence[1]);
                 printf ("\nHace falta el paréntesis de apertura para identificar donde empieza la condición.\n");
-        } else if (strcmp (ifSentence[5], ")")!=0) {
+        } else if(!validarExpresion(ifSentence[2])){
+                printf("No se está escribiendo correctamente el identificador de la variable, o no es del mismo tipo.\n");
+                printf("Recuerde que los identificadores de variables pueden contener únicamente letras mayúsculas, minúsculas o números\n");
+        } else if((strcmp(ifSentence[3], "<") != 0) && (strcmp(ifSentence[3], ">") != 0) && (strcmp(ifSentence[3], "<=") != 0) && (strcmp(ifSentence[3], ">=") != 0) && (strcmp(ifSentence[3], "==")!=0) && (strcmp(ifSentence[3], "!=")!=0) ){
+                printf("Hace falta un operador que indica la condición.\n");
+                printf("Recuerda que los operadores más utilizados para las condiciones son '<','>','<=','>=','==','!='.\n");
+        } else if(!validarExpresion(ifSentence[4])){
+                printf("No se está escribiendo correctamente el identificador de la variable, o no es del mismo tipo.\n");
+                printf("Recuerde que los identificadores de variables pueden contener únicamente letras mayúsculas, minúsculas o números\n");
+ 
+	} else if (strcmp (ifSentence[5], ")")!=0) {
                 printf ("La cadena %s no pertenece a la estructura del if", ifSentence[5]);
                 printf ("\nHace falta el paréntesis de cierre para identificar donde finaliza la condición.\n");
         } else if (strcmp (ifSentence[6], "{")!=0) {
@@ -398,7 +426,7 @@ if (validarExpresion(decSentence[1])) {
 }
 
 void structureLibrarie (char* decSentence[]) {
-	printf("No puede dejar el valor de la librería vacío, debe agregarla\n");
+	printf("Se está escribiendo incorrectamente el valor de la líbreria, deber ser <nombre.h>.\n");
 }
 
 
@@ -410,7 +438,6 @@ void identifyStructure(char* elementList[]) {
 			structureIfElse(elementList);
 		}
 	} else if ((strcmp(elementList[0], "int")==0) || (strcmp(elementList[0], "char")==0) || (strcmp(elementList[0], "double")==0) || (strcmp(elementList[0], "long")==0) || (strcmp(elementList[0], "short")==0)){
-		printf("Entró al char: %s", lineptr);
 		if (contarPalabras(lineptr) <= 3) {
 			structureDecVar(elementList);
 		} else {
@@ -435,7 +462,7 @@ void identifyStructure(char* elementList[]) {
 
 
 void yyerror(const char *s) {
-	char s2[sizeof(lineptr)];
+	char s2[contarPalabras(lineptr)];
 	strcpy(s2, lineptr); 
 	char* elementList[30];
 	int counter = 0;
