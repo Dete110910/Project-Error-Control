@@ -40,9 +40,7 @@ decimal		-?[0-9](\.[0-9])+
 char		\'[^(\n|\')]{1}\'
 string		\"[^(\n|\")]*\"
 identifier 	[a-zA-Z0-9]+
-libToIimport	\<([a-zA-Z0-9_-]+\.h)\>
-comment		\/\*[^(\n)]*\*\/
-
+libToImport	\<([a-zA-Z0-9_-]+\.h)\>
 
 %%
 
@@ -51,37 +49,31 @@ comment		\/\*[^(\n)]*\*\/
 {char}          {HANDLE_COLUM; return VCHA;}
 {string}        {HANDLE_COLUM; return STR;}
 {libToImport}   {HANDLE_COLUM; return LTI;}
-"char*"		{HANDLE_COLUM; return CHARAT;}
 "void"          {HANDLE_COLUM; return VOI;}
 "if"            {HANDLE_COLUM; return IFF;}
 "else"          {HANDLE_COLUM; return ELS;}
 "long"          {HANDLE_COLUM; return LON;}
-"switch"        {HANDLE_COLUM; return SWI;}
-"break"         {HANDLE_COLUM; return BRE;}
-"case"          {HANDLE_COLUM; return CAS;}
 "return"        {HANDLE_COLUM; return RET;}
-"short"        	{HANDLE_COLUM; return SHO;}
-"const"         {HANDLE_COLUM; return CON;}
+"short"         {HANDLE_COLUM; return SHO;} 
 "for"           {HANDLE_COLUM; return FOR;}
-"sizeof"        {HANDLE_COLUM; return SIZ;}
-"default"       {HANDLE_COLUM; return DEF;}
-"static"        {HANDLE_COLUM; return STA;}
 "while"		{HANDLE_COLUM; return WHI;}
-"do"            {HANDLE_COLUM; return DOO;}
 "double"        {HANDLE_COLUM; return DOU;}
 "int"           {HANDLE_COLUM; return INT;}
 "char"          {HANDLE_COLUM; return CHA;}
 "#include"      {HANDLE_COLUM; return INC;}
 "scanf" 	{HANDLE_COLUM; return SCA;}
-"printf" 	{HANDLE_COLUM; return PRI;}
 "cout" 		{HANDLE_COLUM; return COU;}
 "cin" 		{HANDLE_COLUM; return CIN;}
 ","		{HANDLE_COLUM; return COM;}
 =		{HANDLE_COLUM; return ASS;}
+"++"            {HANDLE_COLUM; return PPP;}
+"--"		{HANDLE_COLUM; return MMM;}
 \+		{HANDLE_COLUM; return PLS;}
 \*		{HANDLE_COLUM; return AST;}
 \-		{HANDLE_COLUM; return MIN;}
 \/		{HANDLE_COLUM; return SLS;}
+">>"		{HANDLE_COLUM; return MMQ;}
+"<<"            {HANDLE_COLUM; return MMN;}
 "<"             {HANDLE_COLUM; return MTQ;}
 "<="            {HANDLE_COLUM; return MET;}
 ">"             {HANDLE_COLUM; return GTQ;}
@@ -95,17 +87,13 @@ comment		\/\*[^(\n)]*\*\/
 "[" 		{HANDLE_COLUM; return OBK;}
 "]" 		{HANDLE_COLUM; return CBK;}
 ";"		{HANDLE_COLUM; return SMC;}
-{comment}	{HANDLE_COLUM; return CMM;}
 {identifier}	{HANDLE_COLUM; return IDE;}
 [ \t]+		{HANDLE_COLUM;}	
 [\n]		{HANDLE_COLUM; next_colum=1;}
-.		{printf("lexical error\n");}
+.		{}
 
 %% 
-
-//int yywrap(){return 1;}
 
 size_t min(size_t a, size_t b) {
     return b < a ? b : a;
 }
-

@@ -63,50 +63,41 @@ extern int yydebug;
     IFF = 264,                     /* IFF  */
     ELS = 265,                     /* ELS  */
     LON = 266,                     /* LON  */
-    SWI = 267,                     /* SWI  */
-    BRE = 268,                     /* BRE  */
-    CAS = 269,                     /* CAS  */
-    RET = 270,                     /* RET  */
-    SHO = 271,                     /* SHO  */
-    CON = 272,                     /* CON  */
-    FOR = 273,                     /* FOR  */
-    SIZ = 274,                     /* SIZ  */
-    DEF = 275,                     /* DEF  */
-    STA = 276,                     /* STA  */
-    SHI = 277,                     /* SHI  */
-    DOO = 278,                     /* DOO  */
-    DOU = 279,                     /* DOU  */
-    INT = 280,                     /* INT  */
-    CHA = 281,                     /* CHA  */
-    INC = 282,                     /* INC  */
-    SCA = 283,                     /* SCA  */
-    PRI = 284,                     /* PRI  */
-    COU = 285,                     /* COU  */
-    CIN = 286,                     /* CIN  */
-    ASS = 287,                     /* ASS  */
-    PLS = 288,                     /* PLS  */
-    AST = 289,                     /* AST  */
-    MIN = 290,                     /* MIN  */
-    SLS = 291,                     /* SLS  */
-    MTQ = 292,                     /* MTQ  */
-    MET = 293,                     /* MET  */
-    GTQ = 294,                     /* GTQ  */
-    GEQ = 295,                     /* GEQ  */
-    EQL = 296,                     /* EQL  */
-    NQL = 297,                     /* NQL  */
-    OPP = 298,                     /* OPP  */
-    CPP = 299,                     /* CPP  */
-    OCB = 300,                     /* OCB  */
-    CCB = 301,                     /* CCB  */
-    OBK = 302,                     /* OBK  */
-    CBK = 303,                     /* CBK  */
-    SMC = 304,                     /* SMC  */
-    COM = 305,                     /* COM  */
-    IDE = 306,                     /* IDE  */
-    WHI = 307,                     /* WHI  */
-    CMM = 308,                     /* CMM  */
-    CHARAT = 309,                  /* CHARAT  */
-    STR_TOKEN = 310                /* STR_TOKEN  */
+    RET = 267,                     /* RET  */
+    SHO = 268,                     /* SHO  */
+    FOR = 269,                     /* FOR  */
+    DOU = 270,                     /* DOU  */
+    INT = 271,                     /* INT  */
+    CHA = 272,                     /* CHA  */
+    INC = 273,                     /* INC  */
+    SCA = 274,                     /* SCA  */
+    COU = 275,                     /* COU  */
+    CIN = 276,                     /* CIN  */
+    ASS = 277,                     /* ASS  */
+    PLS = 278,                     /* PLS  */
+    AST = 279,                     /* AST  */
+    MIN = 280,                     /* MIN  */
+    SLS = 281,                     /* SLS  */
+    MTQ = 282,                     /* MTQ  */
+    MET = 283,                     /* MET  */
+    GTQ = 284,                     /* GTQ  */
+    GEQ = 285,                     /* GEQ  */
+    EQL = 286,                     /* EQL  */
+    NQL = 287,                     /* NQL  */
+    OPP = 288,                     /* OPP  */
+    CPP = 289,                     /* CPP  */
+    OCB = 290,                     /* OCB  */
+    CCB = 291,                     /* CCB  */
+    OBK = 292,                     /* OBK  */
+    CBK = 293,                     /* CBK  */
+    SMC = 294,                     /* SMC  */
+    COM = 295,                     /* COM  */
+    IDE = 296,                     /* IDE  */
+    WHI = 297,                     /* WHI  */
+    MMN = 298,                     /* MMN  */
+    MMQ = 299,                     /* MMQ  */
+    PPP = 300,                     /* PPP  */
+    MMM = 301                      /* MMM  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -115,11 +106,11 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 18 "sintacticRHC.y"
+#line 16 "sintacticRHC.y"
 
  char *idval;
 
-#line 123 "sintacticRHC.tab.h"
+#line 114 "sintacticRHC.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

@@ -81,10 +81,8 @@ extern char* yytext;
 void yyerror(const char *s);
 extern int colum;
 extern char *lineptr;
-//extern YYSTYPE yylval;
-//#define YYERROR_VERBOSE 1
 
-#line 88 "sintacticRHC.tab.c"
+#line 86 "sintacticRHC.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -124,58 +122,56 @@ enum yysymbol_kind_t
   YYSYMBOL_IFF = 9,                        /* IFF  */
   YYSYMBOL_ELS = 10,                       /* ELS  */
   YYSYMBOL_LON = 11,                       /* LON  */
-  YYSYMBOL_SWI = 12,                       /* SWI  */
-  YYSYMBOL_BRE = 13,                       /* BRE  */
-  YYSYMBOL_CAS = 14,                       /* CAS  */
-  YYSYMBOL_RET = 15,                       /* RET  */
-  YYSYMBOL_SHO = 16,                       /* SHO  */
-  YYSYMBOL_CON = 17,                       /* CON  */
-  YYSYMBOL_FOR = 18,                       /* FOR  */
-  YYSYMBOL_SIZ = 19,                       /* SIZ  */
-  YYSYMBOL_DEF = 20,                       /* DEF  */
-  YYSYMBOL_STA = 21,                       /* STA  */
-  YYSYMBOL_SHI = 22,                       /* SHI  */
-  YYSYMBOL_DOO = 23,                       /* DOO  */
-  YYSYMBOL_DOU = 24,                       /* DOU  */
-  YYSYMBOL_INT = 25,                       /* INT  */
-  YYSYMBOL_CHA = 26,                       /* CHA  */
-  YYSYMBOL_INC = 27,                       /* INC  */
-  YYSYMBOL_SCA = 28,                       /* SCA  */
-  YYSYMBOL_PRI = 29,                       /* PRI  */
-  YYSYMBOL_COU = 30,                       /* COU  */
-  YYSYMBOL_CIN = 31,                       /* CIN  */
-  YYSYMBOL_ASS = 32,                       /* ASS  */
-  YYSYMBOL_PLS = 33,                       /* PLS  */
-  YYSYMBOL_AST = 34,                       /* AST  */
-  YYSYMBOL_MIN = 35,                       /* MIN  */
-  YYSYMBOL_SLS = 36,                       /* SLS  */
-  YYSYMBOL_MTQ = 37,                       /* MTQ  */
-  YYSYMBOL_MET = 38,                       /* MET  */
-  YYSYMBOL_GTQ = 39,                       /* GTQ  */
-  YYSYMBOL_GEQ = 40,                       /* GEQ  */
-  YYSYMBOL_EQL = 41,                       /* EQL  */
-  YYSYMBOL_NQL = 42,                       /* NQL  */
-  YYSYMBOL_OPP = 43,                       /* OPP  */
-  YYSYMBOL_CPP = 44,                       /* CPP  */
-  YYSYMBOL_OCB = 45,                       /* OCB  */
-  YYSYMBOL_CCB = 46,                       /* CCB  */
-  YYSYMBOL_OBK = 47,                       /* OBK  */
-  YYSYMBOL_CBK = 48,                       /* CBK  */
-  YYSYMBOL_SMC = 49,                       /* SMC  */
-  YYSYMBOL_COM = 50,                       /* COM  */
-  YYSYMBOL_IDE = 51,                       /* IDE  */
-  YYSYMBOL_WHI = 52,                       /* WHI  */
-  YYSYMBOL_CMM = 53,                       /* CMM  */
-  YYSYMBOL_CHARAT = 54,                    /* CHARAT  */
-  YYSYMBOL_STR_TOKEN = 55,                 /* STR_TOKEN  */
-  YYSYMBOL_YYACCEPT = 56,                  /* $accept  */
-  YYSYMBOL_sentencias = 57,                /* sentencias  */
-  YYSYMBOL_sentencia = 58,                 /* sentencia  */
-  YYSYMBOL_ifsim = 59,                     /* ifsim  */
-  YYSYMBOL_cond = 60,                      /* cond  */
-  YYSYMBOL_decvar = 61,                    /* decvar  */
-  YYSYMBOL_initvar = 62,                   /* initvar  */
-  YYSYMBOL_asigvar = 63                    /* asigvar  */
+  YYSYMBOL_RET = 12,                       /* RET  */
+  YYSYMBOL_SHO = 13,                       /* SHO  */
+  YYSYMBOL_FOR = 14,                       /* FOR  */
+  YYSYMBOL_DOU = 15,                       /* DOU  */
+  YYSYMBOL_INT = 16,                       /* INT  */
+  YYSYMBOL_CHA = 17,                       /* CHA  */
+  YYSYMBOL_INC = 18,                       /* INC  */
+  YYSYMBOL_SCA = 19,                       /* SCA  */
+  YYSYMBOL_COU = 20,                       /* COU  */
+  YYSYMBOL_CIN = 21,                       /* CIN  */
+  YYSYMBOL_ASS = 22,                       /* ASS  */
+  YYSYMBOL_PLS = 23,                       /* PLS  */
+  YYSYMBOL_AST = 24,                       /* AST  */
+  YYSYMBOL_MIN = 25,                       /* MIN  */
+  YYSYMBOL_SLS = 26,                       /* SLS  */
+  YYSYMBOL_MTQ = 27,                       /* MTQ  */
+  YYSYMBOL_MET = 28,                       /* MET  */
+  YYSYMBOL_GTQ = 29,                       /* GTQ  */
+  YYSYMBOL_GEQ = 30,                       /* GEQ  */
+  YYSYMBOL_EQL = 31,                       /* EQL  */
+  YYSYMBOL_NQL = 32,                       /* NQL  */
+  YYSYMBOL_OPP = 33,                       /* OPP  */
+  YYSYMBOL_CPP = 34,                       /* CPP  */
+  YYSYMBOL_OCB = 35,                       /* OCB  */
+  YYSYMBOL_CCB = 36,                       /* CCB  */
+  YYSYMBOL_OBK = 37,                       /* OBK  */
+  YYSYMBOL_CBK = 38,                       /* CBK  */
+  YYSYMBOL_SMC = 39,                       /* SMC  */
+  YYSYMBOL_COM = 40,                       /* COM  */
+  YYSYMBOL_IDE = 41,                       /* IDE  */
+  YYSYMBOL_WHI = 42,                       /* WHI  */
+  YYSYMBOL_MMN = 43,                       /* MMN  */
+  YYSYMBOL_MMQ = 44,                       /* MMQ  */
+  YYSYMBOL_PPP = 45,                       /* PPP  */
+  YYSYMBOL_MMM = 46,                       /* MMM  */
+  YYSYMBOL_YYACCEPT = 47,                  /* $accept  */
+  YYSYMBOL_sentencias = 48,                /* sentencias  */
+  YYSYMBOL_sentencia = 49,                 /* sentencia  */
+  YYSYMBOL_ifsim = 50,                     /* ifsim  */
+  YYSYMBOL_ifelse = 51,                    /* ifelse  */
+  YYSYMBOL_libraries = 52,                 /* libraries  */
+  YYSYMBOL_while = 53,                     /* while  */
+  YYSYMBOL_scanf = 54,                     /* scanf  */
+  YYSYMBOL_cout = 55,                      /* cout  */
+  YYSYMBOL_for = 56,                       /* for  */
+  YYSYMBOL_cin = 57,                       /* cin  */
+  YYSYMBOL_cond = 58,                      /* cond  */
+  YYSYMBOL_decvar = 59,                    /* decvar  */
+  YYSYMBOL_initvar = 60,                   /* initvar  */
+  YYSYMBOL_asigvar = 61                    /* asigvar  */
 };
 typedef enum yysymbol_kind_t yysymbol_kind_t;
 
@@ -501,21 +497,21 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  3
+#define YYFINAL  2
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   150
+#define YYLAST   208
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  56
+#define YYNTOKENS  47
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  8
+#define YYNNTS  15
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  56
+#define YYNRULES  69
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  147
+#define YYNSTATES  201
 
 /* YYMAXUTOK -- Last valid token kind.  */
-#define YYMAXUTOK   310
+#define YYMAXUTOK   301
 
 
 /* YYTRANSLATE(TOKEN-NUM) -- Symbol number corresponding to TOKEN-NUM
@@ -559,20 +555,20 @@ static const yytype_int8 yytranslate[] =
       15,    16,    17,    18,    19,    20,    21,    22,    23,    24,
       25,    26,    27,    28,    29,    30,    31,    32,    33,    34,
       35,    36,    37,    38,    39,    40,    41,    42,    43,    44,
-      45,    46,    47,    48,    49,    50,    51,    52,    53,    54,
-      55
+      45,    46
 };
 
 #if YYDEBUG
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    30,    30,    31,    32,    35,    36,    37,    38,    39,
-      41,    45,    46,    47,    48,    49,    50,    51,    54,    55,
-      56,    57,    58,    59,    60,    63,    64,    65,    66,    67,
-      68,    69,    70,    71,    72,    73,    74,    75,    76,    77,
-      78,    79,    80,    81,    82,    83,    84,    85,    86,    87,
-      88,    89,    90,    94,    95,    96,    97
+       0,    26,    26,    27,    30,    31,    32,    33,    34,    35,
+      36,    37,    38,    39,    40,    41,    43,    45,    47,    49,
+      51,    53,    54,    57,    58,    59,    60,    61,    62,    63,
+      64,    67,    69,    70,    71,    72,    73,    74,    75,    76,
+      77,    78,    79,    80,    81,    84,    85,    86,    87,    88,
+      89,    90,    92,    93,    94,    95,    96,    97,    98,    99,
+     100,   101,   102,   103,   104,   105,   108,   109,   110,   111
 };
 #endif
 
@@ -589,13 +585,13 @@ static const char *yysymbol_name (yysymbol_kind_t yysymbol) YY_ATTRIBUTE_UNUSED;
 static const char *const yytname[] =
 {
   "\"end of file\"", "error", "\"invalid token\"", "VINT", "DEC", "VCHA",
-  "STR", "LTI", "VOI", "IFF", "ELS", "LON", "SWI", "BRE", "CAS", "RET",
-  "SHO", "CON", "FOR", "SIZ", "DEF", "STA", "SHI", "DOO", "DOU", "INT",
-  "CHA", "INC", "SCA", "PRI", "COU", "CIN", "ASS", "PLS", "AST", "MIN",
+  "STR", "LTI", "VOI", "IFF", "ELS", "LON", "RET", "SHO", "FOR", "DOU",
+  "INT", "CHA", "INC", "SCA", "COU", "CIN", "ASS", "PLS", "AST", "MIN",
   "SLS", "MTQ", "MET", "GTQ", "GEQ", "EQL", "NQL", "OPP", "CPP", "OCB",
-  "CCB", "OBK", "CBK", "SMC", "COM", "IDE", "WHI", "CMM", "CHARAT",
-  "STR_TOKEN", "$accept", "sentencias", "sentencia", "ifsim", "cond",
-  "decvar", "initvar", "asigvar", YY_NULLPTR
+  "CCB", "OBK", "CBK", "SMC", "COM", "IDE", "WHI", "MMN", "MMQ", "PPP",
+  "MMM", "$accept", "sentencias", "sentencia", "ifsim", "ifelse",
+  "libraries", "while", "scanf", "cout", "for", "cin", "cond", "decvar",
+  "initvar", "asigvar", YY_NULLPTR
 };
 
 static const char *
@@ -605,7 +601,7 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-18)
+#define YYPACT_NINF (-12)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -617,23 +613,29 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-static const yytype_int8 yypact[] =
+static const yytype_int16 yypact[] =
 {
-      30,   -18,     0,   -18,    -8,   -15,   -14,    60,   -13,   -11,
-     -10,    41,   -18,   -18,   -18,   -18,   -18,   -18,    -9,    -3,
-      -1,    -7,    12,    23,    37,    38,     1,    20,    -4,    -2,
-      39,    40,    47,    48,    49,    50,    55,    33,     2,   -18,
-       6,   -18,    70,    71,    72,    73,    15,     8,   -18,     3,
-     -18,    13,    18,   -18,    57,    58,    59,    61,   -18,   -18,
-     -18,   -18,   -18,   -18,   -18,    62,    25,    63,    65,    66,
-      67,     4,     9,    10,     5,    14,    19,    68,    69,    74,
-      75,    76,    77,    79,    26,   -18,   -18,   -18,   -18,    82,
-     -18,   -18,   -18,   -18,    80,    81,    83,    84,    85,    86,
-      87,    88,    89,    90,    92,    99,   -18,   -18,   -18,   -18,
-     -18,   -18,   -17,    17,   -18,   -18,   -18,   -18,   -18,   -18,
-     -18,   -18,   -18,   -18,   -18,   -18,   -12,    21,   103,   -18,
-      93,    94,    95,   105,    96,    97,    98,   100,   -18,   -18,
-     -18,   101,   -18,   -18,   -18,   -18,   -18
+     -12,     0,   -12,    36,    53,    -9,    -1,     5,    12,    17,
+      27,    28,    78,    65,    56,    57,    48,    67,   -12,   -12,
+     -12,   -12,   -12,   -12,   -12,   -12,   -12,   -12,   -12,   -12,
+     -12,    99,   100,   101,   102,   103,   104,    -2,    13,    15,
+      89,    16,    34,    14,   -12,   105,    21,    68,     2,    69,
+      71,    72,    73,    74,    75,    -2,   -12,   -12,   -12,   -12,
+     -12,   -12,    59,    83,     7,   -12,    18,   -12,    77,    19,
+     -12,     9,   -12,    20,    25,   -12,    79,    81,    82,    84,
+      85,    86,    87,    88,   -12,   -12,   -12,   -12,   -12,   -12,
+     -12,    94,    90,    95,    93,    96,    97,    98,   107,   106,
+     108,   109,   110,   111,   112,   114,    35,    92,   -12,   -12,
+     -12,   -12,   -12,   -12,   -12,   118,   119,   -12,   -12,   -12,
+     -12,   131,   -12,   -12,   -12,   -12,   -12,   -12,     8,    23,
+     -12,   120,   121,   128,   117,   116,   -12,   122,   123,   124,
+     125,   -12,   130,   126,   127,   -12,   -12,   -12,   -12,   132,
+       4,   -12,   -12,   129,   133,   134,   135,   138,   139,   140,
+     141,   142,   143,   144,   145,    26,    47,    49,    51,   137,
+     147,   148,   153,   154,   155,   156,   157,   158,   159,   160,
+     161,   162,   163,   164,   165,   136,   166,   167,   168,   169,
+     170,   171,   172,   -12,   -12,   -12,   -12,   -12,   -12,   -12,
+     -12
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -641,33 +643,41 @@ static const yytype_int8 yypact[] =
    means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       2,     3,     0,     1,     0,     0,     0,     0,     0,     0,
-       0,     0,     4,     9,     6,     5,     7,     8,     0,     0,
+       2,     0,     1,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     3,     8,
+       9,    10,    11,    12,    13,    15,    14,     5,     4,     6,
+       7,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,    18,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,    40,    41,    39,    43,
+      44,    42,     0,     0,     0,    48,     0,    49,     0,     0,
+      47,     0,    45,     0,     0,    46,     0,     0,     0,     0,
+       0,     0,     0,     0,    32,    33,    34,    35,    36,    37,
+      38,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,    21,    22,
+      31,    66,    68,    67,    69,     0,     0,    57,    64,    58,
+      65,     0,    54,    61,    52,    59,    53,    60,     0,     0,
+      50,     0,     0,    16,     0,     0,    51,     0,     0,     0,
+       0,    19,     0,     0,     0,    63,    55,    62,    20,     0,
+       0,    56,    17,     0,     0,     0,     0,     0,     0,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,     0,     0,     0,     0,    21,
-       0,    22,     0,     0,     0,     0,     0,     0,    20,     0,
-      18,     0,     0,    19,     0,     0,     0,     0,    11,    12,
-      13,    14,    15,    16,    17,     0,     0,     0,     0,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,    53,    55,    54,    56,     0,
-      30,    44,    31,    45,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,     0,    27,    41,    25,    39,
-      26,    40,     0,     0,    23,    10,    37,    51,    38,    52,
-      34,    48,    32,    46,    33,    47,     0,     0,     0,    24,
-       0,     0,     0,     0,     0,     0,     0,     0,    43,    28,
-      42,     0,    50,    35,    49,    29,    36
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,    23,    27,    25,    29,    24,    28,    26,
+      30
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -18,   -18,   -18,   -18,   102,   -18,   -18,   -18
+     -12,   -12,   -12,   -12,   -12,   -12,   -12,   -12,   -12,   -12,
+     -12,   -11,   -12,   -12,   -12
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-       0,     2,    12,    13,    14,    15,    16,    17
+       0,     1,    18,    19,    20,    21,    22,    23,    24,    25,
+      26,    27,    28,    29,    30
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -675,85 +685,103 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_uint8 yytable[] =
 {
-       3,    54,    55,    56,    57,    67,    79,    94,   100,     4,
-      69,     5,    77,    96,    98,   128,     6,     7,    81,   102,
-     133,    83,   104,   131,     8,     9,    10,   135,    51,    38,
-       1,    40,   129,    47,   130,    18,    19,    20,    26,   134,
-      27,    28,    36,    52,    42,    53,    39,    75,    41,    58,
-      48,    11,    49,    68,    80,    95,   101,    70,   113,    78,
-      97,    99,    76,    43,    82,   103,    84,   105,   132,    50,
-      89,    21,   136,    29,    44,   114,    22,    66,    30,    31,
-      32,    33,    34,    35,    23,    24,    25,    65,    45,    46,
-      59,    60,    30,    31,    32,    33,    34,    35,    61,    62,
-      63,    64,    71,    72,    73,    74,    85,    86,    87,   137,
-      88,   141,    90,    58,    91,    92,    93,   106,   107,     0,
-      37,     0,     0,   108,   109,   110,   111,   112,   115,   116,
-     117,   127,   118,   119,   120,   121,   122,   123,   124,   125,
-     126,     0,   138,   139,   140,   142,   143,   144,     0,   145,
-     146
+       2,     3,     4,     3,     4,    80,    81,    82,    83,     5,
+      94,     6,   101,     7,     8,     9,    10,    11,    12,    13,
+      14,    15,    96,    99,    37,   103,    63,    77,   105,   138,
+     135,   153,   154,   155,   156,    64,    73,    66,    69,    62,
+      38,    16,    17,    84,    91,    40,    39,   136,    95,   137,
+     102,    74,    65,    75,    67,    70,    71,   129,    41,    97,
+     100,   104,    78,   106,   139,    31,    32,    33,    42,    43,
+      48,   169,   170,    72,   130,    49,    50,    51,    52,    53,
+      54,    92,    34,    35,    36,    44,    49,    50,    51,    52,
+      53,    54,   171,   172,   173,   174,   175,   176,    45,    46,
+      55,    47,    56,    57,    58,    68,    59,    60,    61,    79,
+      85,    76,    86,    87,    88,    89,    90,    93,    98,   107,
+     108,   109,   144,   110,   111,   112,   113,   114,   115,   121,
+     116,    84,   117,   131,   134,   118,   119,   120,   142,     0,
+       0,     0,     0,     0,     0,   122,     0,   123,   124,   125,
+     126,   127,   128,   132,   140,   133,   143,   141,     0,     0,
+       0,   145,   146,   147,   148,   149,   151,   150,   152,     0,
+     157,   177,   193,     0,   158,   159,   160,   161,   162,   163,
+     164,   178,   179,   165,   166,   167,   168,   180,   181,   182,
+     183,   184,     0,   185,   186,   187,   188,   189,   190,   191,
+     192,     0,   194,   195,   196,   197,   198,   199,   200
 };
 
 static const yytype_int8 yycheck[] =
 {
-       0,     3,     4,     5,     6,     3,     3,     3,     3,     9,
-       4,    11,     4,     4,     4,    32,    16,    17,     5,     5,
-      32,     3,     3,     6,    24,    25,    26,     6,    32,    32,
-       0,    32,    49,    32,    51,    43,    51,    51,    51,    51,
-      51,    51,    51,    47,    51,    49,    49,    32,    49,    51,
-      49,    51,    32,    51,    51,    51,    51,    51,    32,    51,
-      51,    51,    47,    51,    51,    51,    48,    48,    51,    49,
-      45,    11,    51,    32,    51,    49,    16,    44,    37,    38,
-      39,    40,    41,    42,    24,    25,    26,    32,    51,    51,
-      51,    51,    37,    38,    39,    40,    41,    42,    51,    51,
-      51,    51,    32,    32,    32,    32,    49,    49,    49,     6,
-      49,     6,    49,    51,    49,    49,    49,    49,    49,    -1,
-      18,    -1,    -1,    49,    49,    49,    49,    48,    46,    49,
-      49,    32,    49,    49,    49,    49,    49,    49,    49,    49,
-      48,    -1,    49,    49,    49,    49,    49,    49,    -1,    49,
-      49
+       0,     3,     4,     3,     4,     3,     4,     5,     6,     9,
+       3,    11,     3,    13,    14,    15,    16,    17,    18,    19,
+      20,    21,     4,     4,    33,     5,    37,     6,     3,     6,
+      22,    27,    28,    29,    30,    22,    22,    22,    22,    41,
+      41,    41,    42,    41,    55,    33,    41,    39,    41,    41,
+      41,    37,    39,    39,    39,    39,    22,    22,    41,    41,
+      41,    41,    41,    38,    41,    29,    30,    31,    41,    41,
+      22,    45,    46,    39,    39,    27,    28,    29,    30,    31,
+      32,    22,    29,    30,    31,     7,    27,    28,    29,    30,
+      31,    32,    45,    46,    45,    46,    45,    46,    33,    43,
+      33,    44,     3,     3,     3,    16,     4,     4,     4,    41,
+      41,     6,    41,    41,    41,    41,    41,    34,    41,    40,
+      39,    39,     6,    39,    39,    39,    39,    39,    34,    22,
+      35,    41,    39,    41,     3,    39,    39,    39,    10,    -1,
+      -1,    -1,    -1,    -1,    -1,    39,    -1,    39,    39,    39,
+      39,    39,    38,    35,    34,    36,    39,    36,    -1,    -1,
+      -1,    39,    39,    39,    39,    35,    39,    41,    36,    -1,
+      41,    34,    36,    -1,    41,    41,    41,    39,    39,    39,
+      39,    34,    34,    41,    41,    41,    41,    34,    34,    34,
+      34,    34,    -1,    35,    35,    35,    35,    35,    35,    35,
+      35,    -1,    36,    36,    36,    36,    36,    36,    36
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
    state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,     0,    57,     0,     9,    11,    16,    17,    24,    25,
-      26,    51,    58,    59,    60,    61,    62,    63,    43,    51,
-      51,    11,    16,    24,    25,    26,    51,    51,    51,    32,
-      37,    38,    39,    40,    41,    42,    51,    60,    32,    49,
-      32,    49,    51,    51,    51,    51,    51,    32,    49,    32,
-      49,    32,    47,    49,     3,     4,     5,     6,    51,    51,
-      51,    51,    51,    51,    51,    32,    44,     3,    51,     4,
-      51,    32,    32,    32,    32,    32,    47,     4,    51,     3,
-      51,     5,    51,     3,    48,    49,    49,    49,    49,    45,
-      49,    49,    49,    49,     3,    51,     4,    51,     4,    51,
-       3,    51,     5,    51,     3,    48,    49,    49,    49,    49,
-      49,    49,    48,    32,    49,    46,    49,    49,    49,    49,
-      49,    49,    49,    49,    49,    49,    48,    32,    32,    49,
-      51,     6,    51,    32,    51,     6,    51,     6,    49,    49,
-      49,     6,    49,    49,    49,    49,    49
+       0,    48,     0,     3,     4,     9,    11,    13,    14,    15,
+      16,    17,    18,    19,    20,    21,    41,    42,    49,    50,
+      51,    52,    53,    54,    55,    56,    57,    58,    59,    60,
+      61,    29,    30,    31,    29,    30,    31,    33,    41,    41,
+      33,    41,    41,    41,     7,    33,    43,    44,    22,    27,
+      28,    29,    30,    31,    32,    33,     3,     3,     3,     4,
+       4,     4,    41,    58,    22,    39,    22,    39,    16,    22,
+      39,    22,    39,    22,    37,    39,     6,     6,    41,    41,
+       3,     4,     5,     6,    41,    41,    41,    41,    41,    41,
+      41,    58,    22,    34,     3,    41,     4,    41,    41,     4,
+      41,     3,    41,     5,    41,     3,    38,    40,    39,    39,
+      39,    39,    39,    39,    39,    34,    35,    39,    39,    39,
+      39,    22,    39,    39,    39,    39,    39,    39,    38,    22,
+      39,    41,    35,    36,     3,    22,    39,    41,     6,    41,
+      34,    36,    10,    39,     6,    39,    39,    39,    39,    35,
+      41,    39,    36,    27,    28,    29,    30,    41,    41,    41,
+      41,    39,    39,    39,    39,    41,    41,    41,    41,    45,
+      46,    45,    46,    45,    46,    45,    46,    34,    34,    34,
+      34,    34,    34,    34,    34,    35,    35,    35,    35,    35,
+      35,    35,    35,    36,    36,    36,    36,    36,    36,    36,
+      36
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
-       0,    56,    57,    57,    57,    58,    58,    58,    58,    58,
-      59,    60,    60,    60,    60,    60,    60,    60,    61,    61,
-      61,    61,    61,    61,    61,    62,    62,    62,    62,    62,
-      62,    62,    62,    62,    62,    62,    62,    62,    62,    62,
-      62,    62,    62,    62,    62,    62,    62,    62,    62,    62,
-      62,    62,    62,    63,    63,    63,    63
+       0,    47,    48,    48,    49,    49,    49,    49,    49,    49,
+      49,    49,    49,    49,    49,    49,    50,    51,    52,    53,
+      54,    55,    55,    56,    56,    56,    56,    56,    56,    56,
+      56,    57,    58,    58,    58,    58,    58,    58,    58,    58,
+      58,    58,    58,    58,    58,    59,    59,    59,    59,    59,
+      59,    59,    60,    60,    60,    60,    60,    60,    60,    60,
+      60,    60,    60,    60,    60,    60,    61,    61,    61,    61
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     0,     1,     2,     1,     1,     1,     1,     1,
-       6,     3,     3,     3,     3,     3,     3,     3,     3,     3,
-       3,     3,     3,     5,     6,     5,     5,     5,     7,     8,
-       5,     5,     6,     6,     6,     8,     9,     6,     6,     5,
-       5,     5,     7,     7,     5,     5,     6,     6,     6,     8,
-       8,     6,     6,     4,     4,     4,     4
+       0,     2,     0,     2,     1,     1,     1,     1,     1,     1,
+       1,     1,     1,     1,     1,     1,     6,     9,     2,     6,
+       7,     4,     4,    16,    16,    16,    16,    16,    16,    16,
+      16,     4,     3,     3,     3,     3,     3,     3,     3,     3,
+       3,     3,     3,     3,     3,     3,     3,     3,     3,     3,
+       5,     6,     5,     5,     5,     7,     8,     5,     5,     5,
+       5,     5,     7,     7,     5,     5,     4,     4,     4,     4
 };
 
 
@@ -1486,98 +1514,14 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-  case 3: /* sentencias: $end  */
-#line 31 "sintacticRHC.y"
-                        {printf("Fin del archivo\n");}
-#line 1493 "sintacticRHC.tab.c"
-    break;
-
-  case 4: /* sentencias: sentencias sentencia  */
-#line 32 "sintacticRHC.y"
-                                       {printf("Sentencia con sentencias\n");}
-#line 1499 "sintacticRHC.tab.c"
-    break;
-
-  case 5: /* sentencia: decvar  */
-#line 35 "sintacticRHC.y"
-                         {printf("sentencia if\n");}
-#line 1505 "sintacticRHC.tab.c"
-    break;
-
-  case 6: /* sentencia: cond  */
-#line 36 "sintacticRHC.y"
-                       {printf("decvar sentencia\n");}
-#line 1511 "sintacticRHC.tab.c"
-    break;
-
-  case 7: /* sentencia: initvar  */
-#line 37 "sintacticRHC.y"
-                          {printf("initvar sentencia\n");}
-#line 1517 "sintacticRHC.tab.c"
-    break;
-
-  case 8: /* sentencia: asigvar  */
-#line 38 "sintacticRHC.y"
-                          {printf("asigvar sentencia\n");}
-#line 1523 "sintacticRHC.tab.c"
-    break;
-
-  case 9: /* sentencia: ifsim  */
-#line 39 "sintacticRHC.y"
-                        {printf("cond sentencia\n");}
-#line 1529 "sintacticRHC.tab.c"
-    break;
-
-  case 10: /* ifsim: IFF OPP cond CPP OCB CCB  */
-#line 41 "sintacticRHC.y"
-                                            {printf("ifsim\n");}
-#line 1535 "sintacticRHC.tab.c"
-    break;
-
-  case 11: /* cond: IDE ASS IDE  */
-#line 45 "sintacticRHC.y"
-                              {printf("asig");}
-#line 1541 "sintacticRHC.tab.c"
-    break;
-
-  case 12: /* cond: IDE MTQ IDE  */
-#line 46 "sintacticRHC.y"
-                              {printf("mayor");}
-#line 1547 "sintacticRHC.tab.c"
-    break;
-
-  case 13: /* cond: IDE MET IDE  */
-#line 47 "sintacticRHC.y"
-                              {printf("mayor o igual");}
-#line 1553 "sintacticRHC.tab.c"
-    break;
-
-  case 14: /* cond: IDE GTQ IDE  */
-#line 48 "sintacticRHC.y"
-                              {printf("menor");}
-#line 1559 "sintacticRHC.tab.c"
-    break;
-
-  case 15: /* cond: IDE GEQ IDE  */
-#line 49 "sintacticRHC.y"
-                              {printf("menor o igual");}
-#line 1565 "sintacticRHC.tab.c"
-    break;
-
-  case 16: /* cond: IDE EQL IDE  */
-#line 50 "sintacticRHC.y"
-                              {printf("igual");}
-#line 1571 "sintacticRHC.tab.c"
-    break;
-
-  case 17: /* cond: IDE NQL IDE  */
-#line 51 "sintacticRHC.y"
-                              {printf("diferente");}
-#line 1577 "sintacticRHC.tab.c"
+  case 3: /* sentencias: sentencias sentencia  */
+#line 27 "sintacticRHC.y"
+                                       {printf("Compilación exitosa!!!!\n");}
+#line 1521 "sintacticRHC.tab.c"
     break;
 
 
-#line 1581 "sintacticRHC.tab.c"
+#line 1525 "sintacticRHC.tab.c"
 
       default: break;
     }
@@ -1801,7 +1745,25 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 100 "sintacticRHC.y"
+#line 113 "sintacticRHC.y"
+
+
+int contarPalabras(const char* cadena) {
+    int contador = 0;
+    int esPalabra = 0;
+    while (*cadena) {
+        if (*cadena == ' ' || *cadena == '\n') {
+            esPalabra = 0; 
+        }
+        else if (!esPalabra) {
+            esPalabra = 1;
+            contador++;
+        }
+        cadena++;
+    }
+
+    return contador;
+}
 
 
 bool isNumber(const char* string) {
@@ -1854,7 +1816,7 @@ void getElements(char string[], char* elementList[], int* counter){
 		token = strtok(NULL, delimiter);
 	}
 
-	if (*counter ==15 && token != NULL) {
+	if (*counter ==30 && token != NULL) {
 		printf("Error: Se superó el número de elementos en una línea\n");
 	}
 	
@@ -1876,81 +1838,256 @@ int validarExpresion(const char *cadena) {
 
 void structureIf(char* ifSentence[]){
 	if (strcmp(ifSentence[1], "(")!=0) {
-		printf ("La cadena %s no pertenece a la estructura del if\n", ifSentence[1]);
-		printf ("Hace falta el paréntesis de apertura para identificar donde empieza la condición.\n");
+		printf ("La cadena %s no pertenece a la estructura del if", ifSentence[1]);
+		printf ("\nHace falta el paréntesis de apertura para identificar donde empieza la condición.\n");
 	} else if (strcmp (ifSentence[5], ")")!=0) {
-		printf ("La cadena %s no pertenece a la estructura del if\n", ifSentence[5]);
-		printf ("Hace falta el paréntesis de cierre para identificar donde finaliza la condición.\n");
+		printf ("La cadena %s no pertenece a la estructura del if", ifSentence[5]);
+		printf ("\nHace falta el paréntesis de cierre para identificar donde finaliza la condición.\n");
 	} else if (strcmp (ifSentence[6], "{")!=0) {
-                printf ("La cadena %s no pertenece a la estructura del if\n", ifSentence[6]);
-                printf ("Hace falta el corcherte de apertura para identificar las sentencias. \n");
+                printf ("La cadena %s no pertenece a la estructura del if", ifSentence[6]);
+                printf ("\nHace falta el corcherte de apertura para identificar las sentencias. \n");
       	}
-	printf("La estructura del if es:if ( condición ) {\n}\n");
-
+	printf("La estructura del if es:if ( condición ) {\n}\n"); 
 }
+
+void structureWhile(char* whileSentence[]){
+        if (strcmp(whileSentence[1], "(")!=0) {
+                printf ("La cadena %s no pertenece a la estructura del while", whileSentence[1]);
+                printf ("\nHace falta el paréntesis de apertura para identificar donde empieza la condición.\n");
+        } else if (strcmp (whileSentence[5], ")")!=0) {
+                printf ("La cadena %s no pertenece a la estructura del while", whileSentence[5]);
+                printf ("\nHace falta el paréntesis de cierre para identificar donde finaliza la condición.\n");
+        } else if (strcmp (whileSentence[6], "{")!=0) {
+                printf ("La cadena %s no pertenece a la estructura del while", whileSentence[6]);
+                printf ("\nHace falta el corcherte de apertura para identificar las sentencias. \n");
+        }
+        printf("La estructura del while es: while ( condición ) {\n}\n");
+}
+
+
+void structureIfElse(char* ifSentence[]){
+        if (strcmp(ifSentence[1], "(")!=0) {
+                printf ("La cadena %s no pertenece a la estructura del if", ifSentence[1]);
+                printf ("\nHace falta el paréntesis de apertura para identificar donde empieza la condición.\n");
+        } else if (strcmp (ifSentence[5], ")")!=0) {
+                printf ("La cadena %s no pertenece a la estructura del if", ifSentence[5]);
+                printf ("\nHace falta el paréntesis de cierre para identificar donde finaliza la condición.\n");
+        } else if (strcmp (ifSentence[6], "{")!=0) {
+                printf ("La cadena %s no pertenece a la estructura del if", ifSentence[6]);
+                printf ("\nHace falta el corchete de apertura para identificar las sentencias del if. \n");
+        } else if (strcmp (ifSentence[7], "}")!=0) {
+		printf ("La cadena %s no pertenece a la estructura del if", ifSentence[7]);
+                printf ("\nHace falta el corchete de cierre para identificar las sentencias del if. \n");
+	} else if (strcmp (ifSentence[8], "else")!=0) {
+                printf ("La cadena %s no pertenece a la estructura del if", ifSentence[8]);
+                printf ("\nHace falta la palabra else o está mal escrita. \n");
+        } else if (strcmp (ifSentence[9], "{")!=0) {
+                printf ("La cadena %s no pertenece a la estructura del if", ifSentence[9]);
+                printf ("\nHace falta el corchete de apertura para identificar las sentencias del else. \n");
+        } else if (strcmp (ifSentence[10], "}")!=0) {
+                printf ("La cadena %s no pertenece a la estructura del if", ifSentence[10]);
+                printf ("\nHace falta el corchete de cierre para identificar las sentencias del else. \n");
+	}
+}
+
+void structureScanf(char* scanfSentence[]) {
+	if (strcmp(scanfSentence[1], "(")!=0) {
+		printf ("Hace falta el símbolo '(' de apertura.\n");
+	} else if (!isString(scanfSentence[2])) {
+		printf ("No está escribiendo el valor string, o no se está escribiendo correctamente.\n");
+	} else if (strcmp(scanfSentence[3], ",")!=0) {
+		printf ("No se encuentra el símbolo ','.\n");
+	} else if (!validarExpresion(scanfSentence[4])) {
+		printf ("No se está escribiendo o se está escribiendo incorrectamente el identificador.\n");
+	} else if (strcmp(scanfSentence[5], ")")!=0) {
+		printf ("Hace falta el símbolo ')' de cierre.\n");
+	}
+}
+
+void structureCout(char* coutSentence[]) {
+	if (strcmp(coutSentence[1], "<<")!=0) {
+		printf ("Hace falta el símbolo '<<' el cuál da paso al mensaje que se desea mostrar por pantalla.\n");
+	} else if(!isString(coutSentence[2])) {
+		if (!validarExpresion(coutSentence[2])) {
+			printf ("No se está escribiendo o no se encuentra un identificador de variable, recuerde que puede contener mayúsculas, minúsculas y números.\n");
+		} else {
+			printf ("No se está escribiendo o no se encuentra el mensaje, recuerde que debe ir dentro de comillas.\n");
+		}
+	} else if (strcmp(coutSentence[3], ";")!=0) {
+                printf ("Hace falta el símbolo ';' que indica el final de la línea de cout.\n");
+        }
+}
+
+void structureCin(char* cinSentence[]) {
+        if (strcmp(cinSentence[1], ">>")!=0) {
+                printf ("Hace falta el símbolo '>>' el cuál da paso a la variable que se desea leer.\n");
+        } else if(!validarExpresion(cinSentence[2])) {
+        	printf ("No se está escribiendo o no se encuentra un identificador de variable, recuerde que puede contener mayúsculas, minúsculas y números, sin espacios.\n");
+        } else if (strcmp(cinSentence[3], ";")!=0) {
+		printf ("Hace falta el símbolo ';' que indica el final de la línea de cin.\n");
+	}
+}
+
 
 void structureAss(char* assSentence[]){
         if (strcmp(assSentence[1], "=")!=0) {
-                printf ("La cadena %s no pertenece a la estructura de asignación o no se encuentra en el orden correcto.\n", assSentence[1]);
-                printf ("Hace falta el símbolo '=' que hace referencia a lo que se va asignar.\n");
+                printf ("La cadena %s no pertenece a la estructura de asignación o no se encuentra en el orden correcto.", assSentence[1]);
+                printf ("\nHace falta el símbolo '=' que hace referencia a lo que se va asignar.\n");
         } else if (!isNumber(assSentence[2]) || !isCharacter(assSentence[2]) || !isString(assSentence[2]) || !isDecimal(assSentence[2])){
-                printf ("La cadena %s no pertenece a la estructura de asignación o no se encuentra en el orden correcto.\n", assSentence[2]);
-                printf ("No se está escribiendo correctamente el parámetro a asignar.\n");
+                printf ("La cadena %s no pertenece a la estructura de asignación o no se encuentra en el orden correcto.", assSentence[2]);
+                printf ("\nNo se está escribiendo correctamente el parámetro a asignar.\n");
         } else if (strcmp (assSentence[3], ";")!=0) {
-                printf ("La cadena %s no pertenece a la estructura de asignación o no se encuentra en el orden correcto.\n", assSentence[3]);
-                printf ("Hace falta el punto y coma ';'.\n");
+                printf ("La cadena %s no pertenece a la estructura de asignación o no se encuentra en el orden correcto.", assSentence[3]);
+                printf ("\nHace falta el punto y coma ';'.\n");
 	}
 }
 
 void structureDecVar(char* decSentence[]){
         if (!validarExpresion(decSentence[1])) {
-                printf ("La cadena %s no pertenece a la estructura de declaración de variable o no se encuentra en el orden correcto.\n", decSentence[1]);
-                printf ("No se está escribiendo correctamente el identificador de la variable.\n");
-        } else if (strcmp (decSentence[3], ";")!=0) {
-                printf ("La cadena %s no pertenece a la estructura de asignación o no se encuentra en el orden correcto.\n", decSentence[3]);
-                printf ("Hace falta el punto y coma ';'.\n");
+                printf ("La cadena %s no pertenece a la estructura de declaración de variable o no se encuentra en el orden correcto.", decSentence[1]);
+                printf ("\nNo se está escribiendo correctamente el identificador de la variable.\n");
+	} else if (strcmp (decSentence[2], ";")!=0) {
+                printf ("La cadena %s no pertenece a la estructura de declaración o no se encuentra en el orden correcto.", decSentence[2]);
+                printf ("\nHace falta el punto y coma ';'.\n");
         }
+}
+
+void structureFor(char* forSentence[]){
+	if(strcmp(forSentence[1], "(") != 0){
+		printf("Hace falta el símbolo '(' de apertura.\n");
+	} else if(strcmp(forSentence[2], "int") != 0){
+		printf("Hace falta inicializar la variable para recorrer el ciclo.\n");
+	} else if(!validarExpresion(forSentence[3])){
+		printf("No se está escribiendo correctamente el identificador de la variable.\n");
+		printf("Recuerde que los identificadores de variables pueden contener únicamente letras mayúsculas, minúsculas o números\n");
+	} else if(strcmp(forSentence[4], "=") != 0){
+		printf("Hace falta el símbolo '=' que hace referencia a lo que se va asignar.\n");
+	} else if(!isNumber(forSentence[5])){
+		printf("El valor a asignar no es un número entero.\n");
+	} else if(strcmp(forSentence[6], ";") != 0){
+		printf("Hace falta el símbolo ';' para terminar la primera parte de la estructura de la expresión 'for'.\n");
+	} else if(!validarExpresion(forSentence[7])){
+		printf("No se está escribiendo correctamente el identificador de la variable.\n");
+		printf("Recuerde que los identificadores de variables pueden contener únicamente letras mayúsculas, minúsculas o números\n");
+	} else if((strcmp(forSentence[8], "<") != 0) && (strcmp(forSentence[8], ">") != 0) && (strcmp(forSentence[8], "<=") != 0) && (strcmp(forSentence[8], ">=") != 0)){
+		printf("Hace falta un operador que permita que el ciclo se siga ejecutando.\n");
+		printf("Recuerda que los operadores más utilizados para las estructuras de control son '<','>','<=','>='.\n");
+	} else if(!validarExpresion(forSentence[9])){
+		printf("No se está escribiendo correctamente el identificador de la variable.\n");
+		printf("Recuerde que los identificadores de variables pueden contener únicamente letras mayúsculas, minúsculas o números\n");
+	} else if(strcmp(forSentence[10], ";") != 0){
+		printf("Hace falta el símbolo ';' para terminar la segunda parte de la estructura de la expresión 'for'.\n");
+	} else if(!validarExpresion(forSentence[11])){
+		printf("No se está escribiendo correctamente el identificador de la variable.\n");
+		printf("Recuerde que los identificadores de variables pueden contener únicamente letras mayúsculas, minúsculas o números\n");
+	} else if((strcmp(forSentence[12], "++") != 0) && (strcmp(forSentence[12], "--") != 0)){
+		printf("Hace falta un operador que permita actualizar el valor de la variable.\n");
+		printf("Recuerda que los operadores más utilizados para alterar el valor de una variable son '++', '--'.\n");
+	} else if(strcmp(forSentence[13], ")") != 0){
+		printf("Hace falta el símbolo ')' para cerrar la estructura del 'for'.\n");
+	} else if (strcmp (forSentence[14], "{")!=0) {
+                printf ("La cadena %s no pertenece a la estructura del for", forSentence[14]);
+                printf ("\nHace falta el corchete de apertura para identificar las sentencias del for. \n");
+        } else if (strcmp (forSentence[15], "}")!=0) {
+                printf ("La cadena %s no pertenece a la estructura del for", forSentence[15]);
+                printf ("\nHace falta el corchete de cierre para identificar las sentencias del for. \n");
+        }
+	printf ("Recuerde que la estructura del for es la siguiente: \n");
+	printf ("for ( int a = 0 ; a < var ; i ++ ) { } \n"); 
+}
+
+void structureInitVar(char* decSentence[]) {
+if (validarExpresion(decSentence[1])) {
+        if (contarPalabras(lineptr)<=5) {
+            if (strcmp(decSentence[2], "=")!=0) {
+                printf ("La cadena %s no pertenece a la estructura de inicialización o no se encuentra en el orden correcto.", decSentence[2]);
+                printf ("\nHace falta el símbolo '=' que hace referencia a lo que se va asignar.\n");
+            } else if (!isString(decSentence[3])) {
+                printf ("La cadena %s no pertenece a la estructura de inicialización o no se encuentra en el orden correcto.", decSentence[3]);
+                printf ("\nNo se está escribiendo correctamente el parámetro a asignar.\n");
+            } else if (strcmp(decSentence[4], ";")!=0) {
+                printf ("La cadena %s no pertenece a la estructura de inicialización o no se encuentra en el orden correcto.", decSentence[4]);
+                printf ("\nHace falta el punto y coma ';'.\n");
+            }
+        } else if ((contarPalabras(lineptr)>5) && (contarPalabras(lineptr)<=7)) {
+		if (strcmp(decSentence[2], "[")!=0) {
+                	printf ("La cadena %s no pertenece a la estructura de inicialización o no se encuentra en el orden correcto.", decSentence[2]);
+                	printf ("\nHace falta el símbolo '[' que referencia la llave de inicio del arreglo de strings.\n");
+            	} else if (strcmp(decSentence[3], "]")!=0) {
+                	printf ("La cadena %s no pertenece a la estructura de inicialización o no se encuentra en el orden correcto.", decSentence[3]);
+                	printf ("\nHace falta el símbolo ']' que referencia la llave de cierre del arreglo de strings.\n");
+            	} else if (strcmp(decSentence[4], "=")!=0) {
+                	printf ("La cadena %s no pertenece a la estructura de inicialización o no se encuentra en el orden correcto.", decSentence[4]);
+                	printf ("\nHace falta el símbolo '=' que hace referencia a lo que se va asignar.\n");
+            	} else if (!isString(decSentence[5])) {
+               		printf ("La cadena %s no pertenece a la estructura de inicialización o no se encuentra en el orden correcto.", decSentence[5]);
+                	printf ("\nNo se está escribiendo correctamente el parámetro a asignar.\n");
+            	} else if (strcmp(decSentence[6], ";")!=0) {
+                	printf ("La cadena %s no pertenece a la estructura de inicialización o no se encuentra en el orden correcto.", decSentence[6]);
+                	printf ("\nHace falta el punto y coma ';'.\n");
+	}
+} else {
+       printf ("La cadena %s no pertenece a la estructura de declaración de variable o no se encuentra en el orden correcto.", decSentence[1]);
+       printf ("\nNo se está escribiendo correctamente el identificador de la variable.\n");
+    }
+}
+}
+
+void structureLibrarie (char* decSentence[]) {
+	printf("No puede dejar el valor de la librería vacío, debe agregarla\n");
 }
 
 
 void identifyStructure(char* elementList[]) {
 	if (strcmp(elementList[0], "if")==0) {
-		structureIf(elementList);
+		if (contarPalabras(lineptr)<=8) {
+			structureIf(elementList);
+		} else {
+			structureIfElse(elementList);
+		}
 	} else if ((strcmp(elementList[0], "int")==0) || (strcmp(elementList[0], "char")==0) || (strcmp(elementList[0], "double")==0) || (strcmp(elementList[0], "long")==0) || (strcmp(elementList[0], "short")==0)){
-		structureDecVar(elementList);
-	}  else if (validarExpresion(elementList[0])) {   //Tiene que ir en los últimos
-		structureAss(elementList);
-	
+		printf("Entró al char: %s", lineptr);
+		if (contarPalabras(lineptr) <= 3) {
+			structureDecVar(elementList);
+		} else {
+			structureInitVar(elementList);
+		}
+	} else if (strcmp(elementList[0], "#include")==0) {
+		structureLibrarie(elementList);
+	} else if (strcmp(elementList[0], "while")==0) {
+		structureWhile(elementList);
+	} else if (strcmp(elementList[0], "scanf")==0) {
+		structureScanf(elementList);
+	} else if (strcmp (elementList[0], "cout")==0) {
+		structureCout(elementList);
+	} else if (strcmp (elementList[0], "cin")==0) {
+                structureCin(elementList); 
+	} else if (strcmp (elementList[0], "for")==0) { 
+		structureFor(elementList);
+	} else if (validarExpresion(elementList[0])) {   
+		structureAss(elementList);	
 	}
 }		
-
 
 
 void yyerror(const char *s) {
 	char s2[sizeof(lineptr)];
 	strcpy(s2, lineptr); 
-	char* elementList[15];
+	char* elementList[30];
 	int counter = 0;
 	getElements(s2, elementList, &counter);
-	printf("Error sintáctico en la línea %d columna %d: no se esperaba: %s\n", yylineno,colum, yytext); 
-	fprintf(stderr,"error: %s in line %d, column %d\n", s, yylineno, colum);
+	printf("Error sintáctico en la línea %d columna %d: el carácter: %s no se esperaba en esta posición.\n", yylineno,colum, yytext); 
 	fprintf(stderr,"%s", lineptr);
 	for(int i = 0; i < colum - 1; i++)
         	fprintf(stderr,"_");
-	fprintf(stderr,"^\n");
-	
-	/*for (int i = 0; i < counter; i++) {
-       	 printf("%s ", elementList[i]);
-    	}*/
-        identifyStructure(elementList);
+	fprintf(stderr,"^\n");       
+	identifyStructure(elementList);
 }
 
 
 
 
-
 int main(int argc, char **argv){
-
         if(argc > 1)
                 yyin=fopen(argv[1], "rt");
         else
